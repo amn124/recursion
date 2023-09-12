@@ -1,0 +1,25 @@
+def is_palindrome(word):
+    # Base case: an empty word or a word with a single character is a palindrome
+    if len(word) <= 1:
+        return True
+
+    # Compare the first and last characters of the word
+    if word[0] == word[-1]:
+        # If they are equal, recursively check the subword without the first and last characters
+        return is_palindrome(word[1:-1])
+    else:
+        # If the first and last characters are different, it's not a palindrome
+        return False
+
+# Example usage:
+word1 = "gag"
+word2 = "kayak"
+word3 = "php"
+word4 = "radar"
+word5 = "hello"
+
+print(is_palindrome(word1))  # Output: True
+print(is_palindrome(word2))  # Output: True
+print(is_palindrome(word3))  # Output: False
+print(is_palindrome(word4))  # Output: True
+print(is_palindrome(word5))  # Output: False
